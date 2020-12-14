@@ -133,6 +133,7 @@ class LinkedList {
         System.out.println(s1.getSize());
         System.out.println(s2.getSize());
         
+        // upper bound on number of iterations
         for (int i = 0; i < 800; i++) {
             int circ = i % 4;
             switch (circ) {

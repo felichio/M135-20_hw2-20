@@ -195,6 +195,7 @@ int main(int argc, char *argv[]) {
     std :: cout << s1->get_size() << std::endl;
     std :: cout << s2->get_size() << std::endl;
 
+    // upper bound on number of iterations
     for (int i = 0; i < 800; i++) {
         int circ = i % 4;
         switch (circ) {

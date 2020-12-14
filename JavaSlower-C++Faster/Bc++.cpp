@@ -163,7 +163,7 @@ int main(int argc, char *argv[]) {
     LinkedList *dummy3 = new LinkedList();
     LinkedList *dummy4 = new LinkedList();
 
-
+    // #_of_for_loops * num_of_objects = 5 * 200Mil = 1Billion objects
     for (int i = 0; i < LinkedList::num_of_objects; i++) {
         dummy->append(i);
     }
