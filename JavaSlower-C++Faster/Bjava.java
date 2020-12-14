@@ -101,9 +101,11 @@ class LinkedList {
         LinkedList s = new LinkedList();
         LinkedList dummy = new LinkedList();
         LinkedList dummy2 = new LinkedList();
-        // LinkedList dummy3 = new LinkedList();
-        // LinkedList dummy4 = new LinkedList();
+        LinkedList dummy3 = new LinkedList();
+        LinkedList dummy4 = new LinkedList();
 
+
+        // #_of_for_loops * num_of_objects = 5 * 200Mil = 1Billion objects
         for (int i = 0; i < LinkedList.num_of_objects; i++) {
             dummy.append(i);
         }
@@ -114,15 +116,15 @@ class LinkedList {
         }
         dummy2 = null;
 
-        // for (int i = 0; i < LinkedList.num_of_objects; i++) {
-        //     dummy3.append(i);
-        // }
-        // dummy3 = null;
+        for (int i = 0; i < LinkedList.num_of_objects; i++) {
+            dummy3.append(i);
+        }
+        dummy3 = null;
 
-        // for (int i = 0; i < LinkedList.num_of_objects; i++) {
-        //     dummy4.append(i);
-        // }
-        // dummy4 = null;
+        for (int i = 0; i < LinkedList.num_of_objects; i++) {
+            dummy4.append(i);
+        }
+        dummy4 = null;
 
         for (int i = 0; i < LinkedList.num_of_objects; i++) {
             s.append(i);
