@@ -110,13 +110,13 @@ class LinkedList {
         for (int i = 0; i < LinkedList.num_of_objects; i++) {
             block_n = i / LinkedList.obj_per_page;
             block_circ = i % LinkedList.obj_per_page;
-            list_n = block_n % 2;
+            list_n = block_n % 128;
 
             if (block_circ == LinkedList.middle_index && list_n == 0) {
                 s1.append(i);
                 continue;
             }
-            if (block_circ == LinkedList.middle_index && list_n == 1) {
+            if (block_circ == LinkedList.middle_index && list_n == 64) {
                 s2.append(i);
                 continue;
             }
@@ -128,13 +128,14 @@ class LinkedList {
         for (int i = 0; i < 0.2 * LinkedList.num_of_objects; i++) {
             dummy.prepend(i);
         }
+        dummy = null;
         long mid = System.nanoTime();
         System.out.println("Creation phase duration in ms: " + TimeUnit.NANOSECONDS.toMillis(mid - start));
         System.out.println(s1.getSize());
         System.out.println(s2.getSize());
         
         // upper bound on number of iterations
-        for (int i = 0; i < 800; i++) {
+        for (int i = 0; i < 32000; i++) {
             int circ = i % 4;
             switch (circ) {
                 case 0:
@@ -144,10 +145,10 @@ class LinkedList {
                     s2.changeToLeft(i);
                     break;
                 case 2:
-                    s1.changeToRight(799 - i);
+                    s1.changeToRight(31999 - i);
                     break;
                 case 3:
-                    s2.changeToRight(800 - i);
+                    s2.changeToRight(32000 - i);
                     break;
             }
         }
